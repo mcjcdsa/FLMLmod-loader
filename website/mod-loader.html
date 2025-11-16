@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>模组加载器（FLML） | FreedomLand</title>
+	<link rel="icon" href="./assets/favicon.png" />
+	<link rel="stylesheet" href="./assets/styles.css" />
+	<script defer src="./assets/main.js"></script>
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="./index.html">
+				<img class="brand-logo" src="./assets/logo.svg" alt="FLML" />
+				<span class="brand-name">FLML 官方模组加载器</span>
+			</a>
+			<nav class="nav">
+				<a href="./getting-started.html">快速开始</a>
+				<a class="active" href="./mod-loader.html">模组加载器</a>
+				<a href="./api/index.html">API 文档</a>
+				<a href="./tutorials/index.html">教程</a>
+				<a href="./build-deploy.html">打包与部署</a>
+			</nav>
+			<button class="btn-theme" id="themeToggle" aria-label="切换主题">🌓</button>
+		</div>
+	</header>
+
+	<main class="container doc">
+		<h1>模组加载器（FLML）</h1>
+		<p>FLML 提供稳定、可扩展且安全的模组加载机制，覆盖模组扫描、依赖解析、权限校验、资源注入、类隔离以及事件系统。</p>
+
+		<h2>核心流程</h2>
+		<ol>
+			<li>扫描 <code>mods/</code> 目录，解析 <code>mod.json</code></li>
+			<li>依赖解析：版本范围匹配、拓扑排序、冲突检测、循环依赖检测</li>
+			<li>权限校验：按权限模型授予能力（资源注入、注册表写入、事件监听等）</li>
+			<li>资源注入：合并资源与冲突解决（优先级/命名空间）</li>
+			<li>类加载：自定义 <code>ModClassLoader</code> 实现模块隔离，防冲突</li>
+			<li>事件系统：事件总线（发布-订阅），跨模组通信与游戏事件钩子</li>
+			<li>初始化：调用 <code>IModEntry#onInit</code>，注册 API / 资源 / 监听器</li>
+		</ol>
+
+		<h2>权限模型</h2>
+		<ul>
+			<li>资源注入权限</li>
+			<li>世界编辑权限</li>
+			<li>注册表权限（方块/实体）</li>
+			<li>事件监听权限</li>
+			<li>跨模组交互权限</li>
+		</ul>
+
+		<h2>关键组件</h2>
+		<ul>
+			<li><code>ModLoader</code> / <code>ModScanner</code> / <code>DependencyResolver</code></li>
+			<li><code>PermissionManager</code> / <code>ResourceInjector</code> / <code>ModClassLoader</code></li>
+			<li><code>EventBus</code> / <code>ModContextImpl</code> / <code>Registry</code></li>
+			<li>核心包校验：<code>FLMLCoreValidator</code></li>
+		</ul>
+
+		<p>深入阅读：<a href="../docs/FLML_技术文档.md">FLML 技术文档</a></p>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© 2025 FreedomLand · FLML & FLAPI · MIT License</p>
+		</div>
+	</footer>
+</body>
+</html>
+
+

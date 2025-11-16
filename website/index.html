@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>FLML 官方模组加载器与 API | FreedomLand</title>
+	<meta name="description" content="FreedomLand 官方模组加载器（FLML）与 FLAPI 使用与模组开发教程网站" />
+	<link rel="icon" href="./assets/favicon.png" />
+	<link rel="stylesheet" href="./assets/styles.css" />
+	<script defer src="./assets/main.js"></script>
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="./index.html">
+				<img class="brand-logo" src="./assets/logo.svg" alt="FLML" />
+				<span class="brand-name">FLML 官方模组加载器</span>
+			</a>
+			<nav class="nav">
+				<a href="./getting-started.html">快速开始</a>
+				<a href="./mod-loader.html">模组加载器</a>
+				<a href="./api/index.html">API 文档</a>
+				<a href="./tutorials/index.html">教程</a>
+				<a href="./build-deploy.html">打包与部署</a>
+			</nav>
+			<button class="btn-theme" id="themeToggle" aria-label="切换主题">🌓</button>
+		</div>
+	</header>
+
+	<main class="container hero">
+		<section class="hero-content">
+			<h1>FreedomLand 官方模组加载器（FLML）与 FLAPI</h1>
+			<p class="subtitle">标准化模组结构 · 安全的权限模型 · 强大的事件系统 · 稳定的 API 兼容</p>
+			<div class="hero-actions">
+				<a class="btn primary" href="./getting-started.html">立即开始</a>
+				<a class="btn" href="./tutorials/index.html">查看教程</a>
+			</div>
+			<div class="badges">
+				<span class="badge">版本 1.0.0</span>
+				<span class="badge">Java 17+</span>
+				<span class="badge">MIT</span>
+			</div>
+		</section>
+	</main>
+
+	<section class="container grid mt-lg">
+		<a class="card" href="./mod-loader.html">
+			<h3>FLML 加载器</h3>
+			<p>了解扫描加载流程、依赖解析、权限校验、资源注入、类隔离与事件总线。</p>
+		</a>
+		<a class="card" href="./api/index.html">
+			<h3>FLAPI 接口</h3>
+			<p>按领域浏览接口：核心、方块、事件、世界生成、玩家等。</p>
+		</a>
+		<a class="card" href="./tutorials/index.html">
+			<h3>模组开发教程</h3>
+			<p>从零创建模组、调试测试、打包签名、版本发布与更新机制。</p>
+		</a>
+		<a class="card" href="./build-deploy.html">
+			<h3>打包与部署</h3>
+			<p>官方核心包 flml-core 打包与部署规范，Maven/Gradle 示例与验证。</p>
+		</a>
+	</section>
+
+	<section class="container links mt-lg">
+		<h2>相关文档</h2>
+		<ul class="link-list">
+			<li><a href="../docs/FLML_官方核心包打包及部署规范.md">FLML 官方核心包打包及部署规范</a></li>
+			<li><a href="../docs/FLML_技术文档.md">FLML 技术文档（原理与实现）</a></li>
+			<li><a href="../mods/模组开发指南.md">模组开发指南（最佳实践）</a></li>
+			<li><a href="../flml-core/README.md">flml-core 模块 README</a></li>
+			<li><a href="../README.md">项目根 README</a></li>
+		</ul>
+	</section>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© 2025 FreedomLand · FLML & FLAPI · MIT License</p>
+		</div>
+	</footer>
+</body>
+</html>
+
+

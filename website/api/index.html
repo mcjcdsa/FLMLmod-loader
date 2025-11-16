@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>FLAPI 接口索引 | FLML</title>
+	<link rel="icon" href="../assets/favicon.png" />
+	<link rel="stylesheet" href="../assets/styles.css" />
+	<script defer src="../assets/main.js"></script>
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="../index.html">
+				<img class="brand-logo" src="../assets/logo.svg" alt="FLML" />
+				<span class="brand-name">FLML 官方模组加载器</span>
+			</a>
+			<nav class="nav">
+				<a href="../getting-started.html">快速开始</a>
+				<a href="../mod-loader.html">模组加载器</a>
+				<a class="active" href="./index.html">API 文档</a>
+				<a href="../tutorials/index.html">教程</a>
+				<a href="../build-deploy.html">打包与部署</a>
+			</nav>
+			<button class="btn-theme" id="themeToggle" aria-label="切换主题">🌓</button>
+		</div>
+	</header>
+
+	<main class="container doc">
+		<h1>FLAPI 接口索引</h1>
+		<p>FLAPI 采用接口驱动设计，稳定的向后兼容能力，便于模组开发者扩展。</p>
+
+		<h2>核心</h2>
+		<ul>
+			<li><code>com.freedomland.api.core.IModEntry</code> 模组入口</li>
+			<li><code>com.freedomland.api.core.ModContext</code> 模组上下文</li>
+			<li><code>com.freedomland.api.core.IModInteractor</code> 模组间交互</li>
+		</ul>
+
+		<h2>方块</h2>
+		<ul>
+			<li><code>com.freedomland.api.block.IBlock</code></li>
+			<li><code>com.freedomland.api.block.IBlockRegistry</code></li>
+			<li><code>com.freedomland.api.block.BlockSettings</code></li>
+		</ul>
+
+		<h2>事件</h2>
+		<ul>
+			<li><code>com.freedomland.api.event.IEventBus</code></li>
+			<li><code>com.freedomland.api.event.GameEvent</code></li>
+			<li><code>com.freedomland.api.event.BlockPlaceEvent</code></li>
+		</ul>
+
+		<h2>玩家</h2>
+		<ul>
+			<li><code>com.freedomland.api.player.IPlayer</code></li>
+		</ul>
+
+		<h2>世界生成</h2>
+		<ul>
+			<li><code>com.freedomland.api.world.IWorldGenerator</code></li>
+		</ul>
+
+		<p>更多示例与最佳实践：<a href="../tutorials/index.html">模组开发教程</a></p>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© 2025 FreedomLand · FLML & FLAPI · MIT License</p>
+		</div>
+	</footer>
+</body>
+</html>
+
+

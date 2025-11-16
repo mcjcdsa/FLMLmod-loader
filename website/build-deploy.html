@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>打包与部署 | FLML</title>
+	<link rel="icon" href="./assets/favicon.png" />
+	<link rel="stylesheet" href="./assets/styles.css" />
+	<script defer src="./assets/main.js"></script>
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="./index.html">
+				<img class="brand-logo" src="./assets/logo.svg" alt="FLML" />
+				<span class="brand-name">FLML 官方模组加载器</span>
+			</a>
+			<nav class="nav">
+				<a href="./getting-started.html">快速开始</a>
+				<a href="./mod-loader.html">模组加载器</a>
+				<a href="./api/index.html">API 文档</a>
+				<a href="./tutorials/index.html">教程</a>
+				<a class="active" href="./build-deploy.html">打包与部署</a>
+			</nav>
+			<button class="btn-theme" id="themeToggle" aria-label="切换主题">🌓</button>
+		</div>
+	</header>
+
+	<main class="container doc">
+		<h1>打包与部署</h1>
+		<p>本页汇总 flml-core 官方核心包的打包、验证与部署流程，以及模组的构建建议。</p>
+
+		<h2>FLML 核心包（flml-core）</h2>
+		<ul>
+			<li>Maven/Gradle 配置：依赖、shade/relocation、Jar Manifest</li>
+			<li>官方标识与版本校验：<code>FLML-Official</code>、<code>Game-Version</code>、<code>API-Version</code></li>
+			<li>游戏启动时校验：<code>FLMLCoreValidator</code></li>
+		</ul>
+
+		<h3>参考文档</h3>
+		<ul>
+			<li><a href="../docs/FLML_官方核心包打包及部署规范.md">FLML 官方核心包打包及部署规范</a></li>
+			<li><a href="../flml-core/README.md">flml-core README</a></li>
+		</ul>
+
+		<h2>模组打包建议</h2>
+		<ul>
+			<li>明确 <code>mod.json</code> 元数据与依赖关系</li>
+			<li>按需打包运行时依赖，避免与 FLML 冲突</li>
+			<li>可选 JAR 签名，确保供应链安全</li>
+			<li>提供 <code>CHANGELOG</code> 与版本检查机制</li>
+		</ul>
+
+		<h2>部署与验证</h2>
+		<ol>
+			<li>将 <code>flml-core-1.0.0.jar</code> 放入 <code>mods/</code></li>
+			<li>将模组 JAR 放入 <code>mods/</code></li>
+			<li>通过官方启动器启动（令牌校验），在日志中确认加载结果</li>
+		</ol>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© 2025 FreedomLand · FLML & FLAPI · MIT License</p>
+		</div>
+	</footer>
+</body>
+</html>
+
+

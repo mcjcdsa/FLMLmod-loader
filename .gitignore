@@ -1,0 +1,12 @@
+﻿# Java/IDE/build
+**/target/
+**/build/
+**/.idea/
+**/.vscode/
+**/.classpath
+**/.project
+**/.settings/
+**/.DS_Store
+**/*.iml
+**/release/
+

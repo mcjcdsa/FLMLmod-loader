@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>快速开始 | FLML 官方模组加载器</title>
+	<link rel="icon" href="./assets/favicon.png" />
+	<link rel="stylesheet" href="./assets/styles.css" />
+	<script defer src="./assets/main.js"></script>
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="./index.html">
+				<img class="brand-logo" src="./assets/logo.svg" alt="FLML" />
+				<span class="brand-name">FLML 官方模组加载器</span>
+			</a>
+			<nav class="nav">
+				<a class="active" href="./getting-started.html">快速开始</a>
+				<a href="./mod-loader.html">模组加载器</a>
+				<a href="./api/index.html">API 文档</a>
+				<a href="./tutorials/index.html">教程</a>
+				<a href="./build-deploy.html">打包与部署</a>
+			</nav>
+			<button class="btn-theme" id="themeToggle" aria-label="切换主题">🌓</button>
+		</div>
+	</header>
+
+	<main class="container doc">
+		<h1>快速开始</h1>
+		<p>本页指导你在 FreedomLand 中启用官方模组加载器（FLML）并创建你的第一个模组。</p>
+
+		<h2>1. 前置条件</h2>
+		<ul>
+			<li>已安装 JDK 17+</li>
+			<li>已构建游戏多模块工程（Launcher / GameCore / flml-core）</li>
+			<li>可选：Maven 或 Gradle 环境</li>
+		</ul>
+
+		<h2>2. 安装 FLML 核心包</h2>
+		<ol>
+			<li>构建或下载 <code>flml-core-1.0.0.jar</code></li>
+			<li>将其放置到游戏 <code>mods/</code> 目录或官方指定目录</li>
+			<li>启动器启动游戏后，<code>GameCore</code> 会校验 FLML 核心包有效性</li>
+		</ol>
+		<p>详见：<a href="./build-deploy.html">打包与部署</a></p>
+
+		<h2>3. 创建示例模组</h2>
+		<ol>
+			<li>在 <code>mods/</code> 下建立你的模组目录，包含 <code>mod.json</code>、资源与源码</li>
+			<li>实现 <code>com.freedomland.api.core.IModEntry</code>，并在 <code>mod.json</code> 中声明入口类</li>
+			<li>使用 <code>mods/build_mod.bat</code> 或你自己的构建脚本打包</li>
+			<li>将模组 JAR 放入 <code>mods/</code>，通过启动器选择存档并进入游戏</li>
+		</ol>
+		<p>参考：<a href="../mods/模组开发指南.md">模组开发指南</a></p>
+
+		<h2>4. 常见问题</h2>
+		<ul>
+			<li>游戏必须由官方启动器启动（令牌校验）</li>
+			<li>FLML 核心包需为官方签名/标识版本且与游戏版本兼容</li>
+			<li>模组依赖需在 <code>mod.json</code> 声明并满足版本范围</li>
+		</ul>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© 2025 FreedomLand · FLML & FLAPI · MIT License</p>
+		</div>
+	</footer>
+</body>
+</html>
+
+
