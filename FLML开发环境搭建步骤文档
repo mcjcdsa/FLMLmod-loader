@@ -1,0 +1,78 @@
+# FLML开发环境搭建步骤文档  
+（基于FreedomLand官方模组加载器FLML及FLAPI）  
+
+
+## 一、环境准备  
+### 1. 必要工具  
+- Java Development Kit（JDK 8+，推荐11）：用于编译Java源码  
+- Python 3.x：用于运行本地文档网站  
+- 代码编辑器/IDE：推荐IntelliJ IDEA、Eclipse或VS Code（需安装Java插件）  
+- Git（可选）：用于版本控制  
+
+
+## 二、目录结构说明  
+下载或克隆项目后，核心目录结构如下：  
+```  
+项目根目录/  
+├─ flove my life-core/          # 官方核心模块（FLML与FLAPI源码）  
+│  └─ GameCore/src/main/java/com/freedomland/  
+│     ├─ modloader/             # FLML加载器核心源码  
+│     └─ api/                   # FLAPI开发接口源码  
+├─ docs/                        # 文档目录  
+│  └─ mods/模组开发指南.md       # 模组开发详细指南（若存在）  
+├─ 网站/                        # 在线文档网站文件  
+├─ build_flml_core.bat          # 核心模块打包脚本  
+└─ 启动网站.bat                 # 文档网站本地运行脚本  
+```  
+
+
+## 三、核心模块（FLML+FLAPI）构建步骤  
+### 1. 进入核心目录  
+打开终端（Windows命令提示符/PowerShell，Linux/macOS终端），执行：  
+```bash  
+cd 项目根目录/flove my life-core  
+```  
+
+### 2. 打包核心模块  
+- 方法1：直接运行打包脚本（Windows）：  
+  双击 `build_flml_core.bat`，脚本会自动编译源码并生成 `flove my life-core-1.0.0.jar`（输出路径通常为 `out/` 或 `target/` 目录）。  
+
+- 方法2：手动编译（适用于所有系统）：  
+  参考 `flove my life-core/README.md` 中的编译命令（通常基于Maven/Gradle），例如：  
+  ```bash  
+  # 若使用Maven  
+  mvn clean package  
+  # 若使用Gradle  
+  gradlew build  
+  ```  
+
+### 3. 验证打包结果  
+检查输出目录中是否生成 `flove my life-core-1.0.0.jar`，该文件包含FLML加载器核心及FLAPI接口。  
+
+
+## 四、文档网站访问步骤  
+### 1. 本地启动文档网站  
+- 方法1：双击运行 `启动网站.bat`（Windows），自动在9000端口启动服务。  
+- 方法2：手动执行命令（所有系统）：  
+  ```bash  
+  cd 项目根目录/网站  
+  python -m http.server 9000  
+  ```  
+
+### 2. 访问文档  
+打开浏览器，输入地址 `http://localhost:9000`，即可查看在线文档（包含FLAPI接口说明、模组开发规范等）。  
+
+
+## 五、FLAPI接口使用入门  
+1. **引入依赖**：在你的模组项目中，将打包好的 `flove my life-core-1.0.0.jar` 作为依赖导入（IDE中通常通过“添加外部JAR”实现）。  
+2. **实现核心接口**：参考 `docs/mods/模组开发指南.md`，通过实现 `com.freedomland.api` 包下的接口（如 `Mod`、`EventHandler` 等）开发自定义模组。  
+3. **测试加载**：将模组打包为JAR，放入游戏的 `mods/` 目录，启动游戏时FLML会自动加载并运行你的模组。  
+
+
+## 六、许可证说明  
+本项目遵循 **麻省理工学院（MIT）许可证**，允许：  
+- 自由使用、修改、分发源码及二进制文件  
+- 商业用途（需保留原许可证声明）  
+
+
+如需进一步了解FLAPI接口细节或模组调试技巧，可参考 `网站/` 目录下的详细文档，或查看 `flove my life-core/src/main/java/com/freedomland/api` 中的源码注释。
